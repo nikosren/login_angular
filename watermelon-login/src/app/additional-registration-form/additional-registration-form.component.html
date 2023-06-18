@@ -1,0 +1,31 @@
+<form [formGroup]="additionalRegistrationForm" (submit)="submitAdditionalRegistrationForm()">
+  <div style="text-align: center;">
+    <h1>Additional Information</h1>
+    <label for="companyName">Company Name </label>
+    <input type="text" id="companyName" formControlName="companyName" required>
+    <div *ngIf="isFieldInvalid('companyName')" class="error-message">Company Name is required</div>
+    <div>
+      <br>
+      <label for="industry">Industry:</label>
+      <select id="industry" formControlName="industry">
+        <option value="Overheid">Overheid</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <label for="mainGoal">Main Goal:</label>
+      <select id="mainGoal" formControlName="mainGoal">
+        <option value="Increase customer satisfaction">Increase customer satisfaction</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <label for="useCase">Use Case:</label>
+      <select id="useCase" formControlName="useCase" required>
+        <option value="Marketing & lead generatie">Marketing & lead generatie</option>
+      </select>
+    </div>
+    <br>
+    <button type="submit">Submit</button>
+  </div>
+</form>

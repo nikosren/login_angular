@@ -1,0 +1,25 @@
+<form [formGroup]="registrationForm" (submit)="submitRegistrationForm()" class="registration-form">
+  <div class="form-title"><img class="fit-picture" src="assets/4UHDY5GG_400x400.png" alt="Watermelon"></div>
+  <h1 class="form-title">Watermelon Registration</h1>
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" formControlName="firstName" required>
+    <div *ngIf="isFieldInvalid('firstName')" class="error-message">First Name is required</div>
+  </div>
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" formControlName="lastName" required>
+    <div *ngIf="isFieldInvalid('lastName')" class="error-message">Last Name is required</div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email" required>
+    <div *ngIf="isFieldInvalid('email')" class="error-message">Email is required with the correct form!</div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password" required>
+    <div *ngIf="isFieldInvalid('password')" class="error-message">Password is required</div>
+  </div>
+  <button type="submit" [disabled]="isSubmitting" class="register-button">Register</button>
+</form>
